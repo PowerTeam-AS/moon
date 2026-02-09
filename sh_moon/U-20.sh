@@ -8,9 +8,11 @@ set -u
 CHECK_ID="U-20"
 # 타겟 아래에 작성 (여러 파일)
 
-# ==== 로그 저장 경로 설정 ==== # TODO : 루트 변경 시 수정
-LOG_DIR="/home/rockylinux/results"
-LOG_FILE="$LOG_DIR/$CHECK_ID.log"
+# ==== 로그 저장 경로 설정 ====
+LOG_DIR="/var/log/system_check"
+# 날짜
+DATE=$(date +"%Y-%m-%d %H:%M:%S")
+LOG_FILE="$LOG_DIR/system_check_$(date +%Y%m%d).log"
 mkdir -p "$LOG_DIR"
 
 # ==== 점검 걸린 시간 기록
